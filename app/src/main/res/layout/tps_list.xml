@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:background="@color/colorBackground"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+    <TextView
+        android:id="@+id/tv_tps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_nomor"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Nomor TPS"
+        android:textColor="#000000"
+        android:textSize="8pt"
+        android:textStyle="bold" />
+</androidx.cardview.widget.CardView>
