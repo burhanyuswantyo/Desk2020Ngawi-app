@@ -20,30 +20,30 @@ import retrofit2.http.Query;
 public interface ClientService {
     @FormUrlEncoded
     @POST("login")
-    Call<ResponseBody> login(@Field("kecamatan") String kecamatan, @Field("password") String password);
-
-    @FormUrlEncoded
-    @POST("logindesa")
-    Call<ResponseBody> loginDesa(@Field("id") String id, @Field("password") String password, @Field("kecamatan") String kecamatan);
+    Call<ResponseBody> login(
+            @Field("id") String id,
+            @Field("password") String password,
+            @Field("kecamatan") String kecamatan);
 
     @GET("kecamatan")
     Call<GetKecamatan> getKecamatan();
 
-    @GET("{kecamatan_id}")
+    @GET("desa/{kecamatan_id}")
     Call<GetDesa> getDesa(@Query("kecamatan_id") String kecamatan_id);
 
-    @GET("desa/{desa_id}")
+    @GET("tps/{desa_id}")
     Call<GetTps> getTps(@Query("desa_id") String desa_id);
 
-    @GET("tps/{tps_id}")
+    @GET("data/{tps_id}")
     Call<GetData> getData(@Query("tps_id") String tps_id);
 
     @FormUrlEncoded
-    @PUT("tps")
-    Call<PostPutDelData> putData(@Field("jml_suara") String jml_suara,
-                                 @Field("tps_id") String tps_id,
-                                 @Field("paslon_id") String paslon_id,
-                                 @Field("kecamatan") String kecamatan,
-                                 @Field("desa") String desa,
-                                 @Field("tps") String tps);
+    @PUT("data")
+    Call<PostPutDelData> putData(
+            @Field("jml_suara") String jml_suara,
+            @Field("tps_id") String tps_id,
+            @Field("paslon_id") String paslon_id,
+            @Field("kecamatan") String kecamatan,
+            @Field("desa") String desa,
+            @Field("tps") String tps);
 }

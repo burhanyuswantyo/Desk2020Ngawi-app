@@ -38,7 +38,7 @@ public class TpsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tps);
-        setTitle("Desa " + getIntent().getStringExtra("desa"));
+        setTitle("Desa " + Session.init(TpsActivity.this).getString("desa"));
 
         recyclerView = (RecyclerView) findViewById(R.id.rv_tps);
         layoutManager = new LinearLayoutManager(this);
@@ -55,7 +55,7 @@ public class TpsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TpsActivity.this, RekapActivity.class);
-                intent.putExtra("id", Session.init(TpsActivity.this).getString("id"));
+                intent.putExtra("desa_id", Session.init(TpsActivity.this).getString("desa_id"));
                 TpsActivity.this.startActivity(intent);
             }
         });
@@ -69,7 +69,7 @@ public class TpsActivity extends AppCompatActivity {
     }
 
     public void refresh() {
-        Call<GetTps> tpsCall = clientService.getTps(getIntent().getStringExtra("desa_id"));
+        Call<GetTps> tpsCall = clientService.getTps(Session.init(TpsActivity.this).getString("desa_id"));
         tpsCall.enqueue(new Callback<GetTps>() {
             @Override
             public void onResponse(Call<GetTps> call, Response<GetTps> response) {

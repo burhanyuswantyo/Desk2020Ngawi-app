@@ -2,6 +2,7 @@ package com.ngawi.desk2020.model;
 
 import com.google.gson.annotations.SerializedName;
 
+
 public class Kecamatan {
     @SerializedName("id")
     private String id;
@@ -12,7 +13,7 @@ public class Kecamatan {
     @SerializedName("password")
     private String password;
 
-    public Kecamatan(String id, String kecamatan, String password) {
+    public Kecamatan() {
         this.id = id;
         this.kecamatan = kecamatan;
         this.password = password;

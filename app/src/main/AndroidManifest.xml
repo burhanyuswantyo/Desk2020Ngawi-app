@@ -14,20 +14,20 @@
 
         <activity
             android:name=".RekapActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".DataActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".TpsActivity"
             android:label="Daftar TPS"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme"></activity>
         <activity
-            android:name=".MainActivity"
-            android:label="Daftar Kecamatan"
-            android:theme="@style/AppTheme" />
-        <activity
             android:name=".LoginActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/LoginTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

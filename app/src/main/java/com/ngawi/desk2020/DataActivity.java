@@ -39,7 +39,7 @@ public class DataActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
-        setTitle("TPS " + getIntent().getStringExtra("tps") + " Desa " + getIntent().getStringExtra("desa"));
+        setTitle("TPS " + getIntent().getStringExtra("tps") + " Desa " + Session.init(DataActivity.this).getString("desa"));
 
         recyclerView = (RecyclerView) findViewById(R.id.rv_data);
         layoutManager = new LinearLayoutManager(this);
